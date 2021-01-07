@@ -52,6 +52,9 @@ const deployOvmPair = async ({ l1ProviderUrl, l2ProviderUrl }) => {
 
 const deployInstance = async ({ useOvm, privateKey, l1ProviderUrl, l2ProviderUrl }) => {
 	await commands.build({ useOvm, optimizerRuns: useOvm ? 1 : 200, testHelpers: true });
+	console.log(`deployInstance: useOvm ${useOvm}`);
+	console.log(`l1ProviderUrl: ${l1ProviderUrl}`);
+	console.log(`l2ProviderUrl: ${l2ProviderUrl}`);
 
 	await commands.deploy({
 		network: 'local',
